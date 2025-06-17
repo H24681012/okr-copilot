@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OKR Copilot - Elite OKR Design Assistant</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-bullseye"></i>
+                    <h1>OKR Copilot</h1>
+                </div>
+                <p class="tagline">Transform messy ideas into elite-quality OKRs following SAFe standards</p>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Input Section -->
+            <section class="input-section">
+                <div class="input-container">
+                    <h2>Share Your OKR Idea</h2>
+                    <p class="subtitle">Enter any messy goal, initiative, or idea - I'll transform it into polished OKRs</p>
+                    
+                    <div class="input-wrapper">
+                        <textarea 
+                            id="okr-input" 
+                            placeholder="Example: Launch CRM system and train all sales team members by Q2..."
+                            rows="4"
+                        ></textarea>
+                        <button id="process-btn" class="primary-btn">
+                            <i class="fas fa-magic"></i>
+                            Transform to OKR
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Results Section -->
+            <section class="results-section" id="results-section" style="display: none;">
+                <div class="results-container">
+                    <h2>Your Elite OKR</h2>
+                    
+                    <div class="okr-card">
+                        <div class="theme-section">
+                            <label>Theme:</label>
+                            <p id="theme-result"></p>
+                        </div>
+                        
+                        <div class="objective-section">
+                            <label>Objective:</label>
+                            <p id="objective-result"></p>
+                        </div>
+                        
+                        <div class="key-results-section">
+                            <label>Key Results:</label>
+                            <ul id="key-results-list"></ul>
+                        </div>
+                        
+                        <div class="confidence-section">
+                            <label>Confidence Level:</label>
+                            <span id="confidence-badge" class="confidence-badge"></span>
+                        </div>
+                    </div>
+
+                    <div id="baseline-request" class="baseline-request" style="display: none;">
+                        <h3>Baseline Information Needed</h3>
+                        <p id="baseline-question"></p>
+                        <div class="baseline-input-wrapper">
+                            <input type="text" id="baseline-input" placeholder="Enter current baseline value...">
+                            <button id="submit-baseline-btn" class="secondary-btn">Submit Baseline</button>
+                        </div>
+                    </div>
+
+                    <div class="action-buttons" id="action-buttons" style="display: none;">
+                        <button id="approve-btn" class="approve-btn">
+                            <i class="fas fa-check"></i>
+                            Approve & Publish
+                        </button>
+                        <button id="edit-btn" class="secondary-btn">
+                            <i class="fas fa-edit"></i>
+                            Request Edits
+                        </button>
+                    </div>
+
+                    <div id="edit-section" class="edit-section" style="display: none;">
+                        <h3>Request Edits</h3>
+                        <textarea id="edit-input" placeholder="Describe what changes you'd like..." rows="3"></textarea>
+                        <button id="submit-edits-btn" class="primary-btn">Submit Changes</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sticky Board Section -->
+            <section class="sticky-board-section">
+                <div class="board-header">
+                    <h2>
+                        <i class="fas fa-thumbtack"></i>
+                        Published OKRs Board
+                    </h2>
+                    <p>Elite OKRs approved and shared by the community</p>
+                </div>
+                
+                <div class="sticky-board" id="sticky-board">
+                    <!-- Sticky notes will be dynamically added here -->
+                </div>
+            </section>
+        </main>
+
+        <!-- Loading Overlay -->
+        <div id="loading-overlay" class="loading-overlay" style="display: none;">
+            <div class="loading-spinner">
+                <i class="fas fa-sync fa-spin"></i>
+                <p>Crafting your elite OKR...</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 
